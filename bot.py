@@ -782,10 +782,10 @@ async def send(ctx, addy, value):
 
         response = requests.post(url, json=payload, headers=headers)
         response_data = response.json()
-        await message.edit(content=f"<:Spider_arrow:1243092386758918156> **Successfully Sent {value}$ To {addy}**\nhttps://live.blockcypher.com/ltc/tx/{response_data["txId"]}")
+        await message.edit(content=f"<:Spider_arrow:1243092386758918156> **Successfully Sent {value}$ To {addy}**\nhttps://live.blockcypher.com/ltc/tx/{response_data['txId']}")
         print(f"{reset}[ {cyan}{time_rn}{reset} ] {gray}({green}+{gray}) {pretty}{Fore.GREEN}LTC SEND SUCCESS✅ ")
     except:
-        await ctx.send(content=f"<:Spider_arrow:1243092386758918156> **Failed to send LTC Because** :- {response_data["cause"]}")
+        await ctx.send(content=f"<:Spider_arrow:1243092386758918156> **Failed to send LTC Because** :- {response_data['cause']}")
 
 @raj.command(aliases=['purge, clear'])
 async def clear(ctx, times: int):
